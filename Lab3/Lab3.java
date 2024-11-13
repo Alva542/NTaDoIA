@@ -16,12 +16,12 @@ class Player {
 
         while (!validInput) {
             try {
-                System.out.println("> " + name + " (" + symbol + "), enter your move coordinates :: [row] and [column] separated by space: ");
+                System.out.println("> " + name + " (" + symbol + "), enter your move coordinates : [row] and [column] separated by space: ");
                 move[0] = Integer.parseInt(scanner.next());
                 move[1] = Integer.parseInt(scanner.next());
                 validInput = true;
             } catch (NumberFormatException e) {
-                System.out.println("\n:: Invalid input : Please enter two numbers ::");
+                System.out.println("\n:: Invalid input : Please enter two numbers :");
                 board.printBoard();
             }
         }
@@ -60,7 +60,7 @@ class GameBoard {
     // Method to change the state of the game board
     public boolean changeBoard(int row, int col, char symbol) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != '-') {
-            System.out.println("\n:: Invalid move : Try again ::");
+            System.out.println("\n: Invalid move : Try again :");
             printBoard();
             return false;
         }
@@ -135,7 +135,7 @@ public class Lab3 {
 
             if (gameWon) {
                 board.printBoard();
-                System.out.println("[!] Congrats, " + currentPlayer.getName() + " (" + currentPlayer.getSymbol() + ")" + " :: You have won [!]");
+                System.out.println("[!] Congrats, " + currentPlayer.getName() + " (" + currentPlayer.getSymbol() + ")" + " : You have won [!]");
             } else {
                 // switch players
                 currentPlayer = (currentPlayer == player1) ? player2 : player1;
