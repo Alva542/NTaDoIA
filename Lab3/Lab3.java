@@ -2,16 +2,16 @@ import java.util.Scanner;
 
 class Player {
     private String name;
-    private char symbol;  // 'X' or 'O'
+    private char symbol;  
 
-    public Player(String name, char symbol) { // player constructor
+    public Player(String name, char symbol) { 
         this.name = name;
         this.symbol = symbol;
     }
 
     public int[] makeMove(GameBoard board) {
         Scanner scanner = new Scanner(System.in);
-        int[] move = new int[2]; // row and column
+        int[] move = new int[2];
         boolean validInput = false;
 
         while (!validInput) {
@@ -34,7 +34,7 @@ class Player {
 }
 
 class GameBoard {
-    private char[][] board = new char[3][3]; // 3x3 game board
+    private char[][] board = new char[3][3]; 
 
     public GameBoard() {
         for (int i = 0; i < 3; i++) {
@@ -69,7 +69,7 @@ class GameBoard {
     }
 
     public boolean checkWin(char symbol) {
-        // check rows + columns + diagonals
+
         for (int i = 0; i < 3; i++) {
             if (board[i][0] == symbol && board[i][1] == symbol && board[i][2] == symbol) {
                 return true;
@@ -88,7 +88,7 @@ class GameBoard {
         return false;
     }
 
-    // to check if the board is full (draw)
+
     public boolean isFull() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -118,7 +118,6 @@ public class Lab3 {
         Player currentPlayer = player1;
         boolean gameWon = false;
 
-        // main game loop
         while (!board.isFull() && !gameWon) {
             board.printBoard();
             int[] move;
